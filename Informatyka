@@ -69,3 +69,58 @@ ax.set_axis_off()
 plt.axis('equal');
 plt.title('liczba ludności powyżej 65 lat')
 gdf.plot("TOT_65__", legend=True)
+
+gdf = gdf.to_crs("EPSG:4326")
+cell.loc[dissolve.index, 'MALE_0_14'] = dissolve.MALE_0_14.values
+ax = cell.plot(column='MALE_0_14', figsize=(12, 8), cmap='viridis', vmax=700000, edgecolor="grey", legend = True)
+plt.autoscale(False)
+ax.set_axis_off()
+plt.axis('equal');
+plt.title('liczba ludności meskiej 0-14')
+gdf.plot("MALE_0_14", legend=True)
+
+gdf = gdf.to_crs("EPSG:4326")
+cell.loc[dissolve.index, 'MALE_15_64'] = dissolve.MALE_15_64.values
+ax = cell.plot(column='MALE_15_64', figsize=(12, 8), cmap='viridis', vmax=700000, edgecolor="grey", legend = True)
+plt.autoscale(False)
+ax.set_axis_off()
+plt.axis('equal');
+plt.title('liczba ludności meskiej 15-64')
+gdf.plot("MALE_15_64", legend=True)
+
+gdf = gdf.to_crs("EPSG:4326")
+cell.loc[dissolve.index, 'MALE_65__'] = dissolve.MALE_65__.values
+ax = cell.plot(column='MALE_65__', figsize=(12, 8), cmap='viridis', vmax=700000, edgecolor="grey", legend = True)
+plt.autoscale(False)
+ax.set_axis_off()
+plt.axis('equal');
+plt.title('liczba ludności meskiej powyżej 65')
+gdf.plot("MALE_65__", legend=True)
+
+#%%
+gdf = gdf.to_crs("EPSG:4326")
+cell.loc[dissolve.index, 'FEM_0_14'] = dissolve.FEM_0_14.values
+ax = cell.plot(column='FEM_0_14', figsize=(12, 8), cmap='viridis', vmax=700000, edgecolor="grey", legend = True)
+plt.autoscale(False)
+ax.set_axis_off()
+plt.axis('equal');
+plt.title('liczba ludności zenskiej 0-14')
+gdf.plot("FEM_0_14", legend=True)
+
+gdf = gdf.to_crs("EPSG:4326")
+cell.loc[dissolve.index, 'FEM_15_64'] = dissolve.FEM_15_64.values
+ax = cell.plot(column='FEM_15_64', figsize=(12, 8), cmap='viridis', vmax=700000, edgecolor="grey", legend = True)
+plt.autoscale(False)
+ax.set_axis_off()
+plt.axis('equal');
+plt.title('liczba ludności zenskiej 15-64')
+gdf.plot("FEM_15_64", legend=True)
+
+gdf = gdf.to_crs("EPSG:4326")
+cell.loc[dissolve.index, 'FEM_65__'] = dissolve.FEM_65__.values
+ax = cell.plot(column='FEM_65__', figsize=(12, 8), cmap='viridis', vmax=700000, edgecolor="grey", legend = True)
+plt.autoscale(False)
+ax.set_axis_off()
+plt.axis('equal');
+plt.title('liczba ludności zenskiej powyżej 65')
+gdf.plot("FEM_65__", legend=True)
